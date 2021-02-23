@@ -1,0 +1,28 @@
+.search-result-item {
+  height: 60px;
+  box-sizing: border-box;
+  padding: 0 1.5em;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  border-bottom: 1px solid rgb(230,230,230);
+  cursor: pointer;
+
+  &__icon,
+  &__text {
+    color: var(--elemental-card-color);
+  }
+
+  &__icon {
+    line-height: 0;
+  }
+
+  &__text {
+    font-family: var(--basic-font);
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: rgb(245,245,245);
+  }
+}

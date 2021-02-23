@@ -1,8 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 :root {
-  
+  --basic-font: 'Roboto', sans-serif;
+
+  --elemental-card-color: #208df9;
+
+  --card-title-color: #26262d;
+  --card-footer-elements-color: #93989a;
+  --card-description-color: #62666a;
+
+  --width-icons-container: 30px;
+  --base-card-size: 320px;
+  --search-input-height: 40px;
 }
 
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgb(230,230,230);
+
+    @media screen and (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--elemental-card-color);
+  }
 }

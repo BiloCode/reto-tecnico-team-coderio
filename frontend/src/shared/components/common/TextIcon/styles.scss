@@ -1,0 +1,23 @@
+.text-icon {
+  display: grid;
+  grid-template-columns: var(--width-icons-container) 1fr;
+  align-items: flex-end;
+  margin-right: 2em;
+
+  &__icon , &__text {
+    color: var(--card-footer-elements-color);
+  }
+
+  &__icon {
+    line-height: 0;
+  }
+
+  &__text {
+    font-family: var(--basic-font);
+    font-size: .8em;
+  }
+
+  &::last-child {
+    margin-right: 0;
+  }
+}

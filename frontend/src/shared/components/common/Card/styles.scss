@@ -1,0 +1,76 @@
+.timezone-card {
+  width: 100%;
+  background-color: #fff;
+  border-top: 5px solid var(--elemental-card-color);
+  box-sizing: border-box;
+  padding: 1.5em;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  user-select: none;
+  transition: .3s;
+
+  &__information {
+    display: grid;
+    height: 32px;
+    grid-template-columns: var(--width-icons-container) 1fr 32px;
+    align-items: center;
+    position: relative;
+  }
+
+  &__icon,
+  &__delete-icon {
+    line-height: 0;
+  }
+
+  &__icon {
+    font-size: 1.3em;
+    color: var(--elemental-card-color);
+  }
+
+  &__delete-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    justify-self: end;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: var(--card-title-color);
+
+    &:hover {
+      color: var(--elemental-card-color);
+      background-color: rgb(240,240,240);
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+
+  &__title {
+    font-family: var(--basic-font);
+    color: var(--card-title-color);
+    font-weight: 900;
+    font-size: 1.2em;
+  }
+
+  &__description {
+    font-family: var(--basic-font);
+    font-weight: 300;
+    font-size: .9em;
+    margin: 1.5em 0;
+    color: var(--card-description-color);
+  }
+
+  &__time-indicators {
+    display: flex;
+  }
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  }
+
+  &:hover &__delete-icon {
+    display: flex;
+  }
+}

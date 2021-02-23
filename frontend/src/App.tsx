@@ -1,7 +1,9 @@
+import Home from "views/Home";
+
 function App() {
   return (
     <div>
-      <h1>Timezone App</h1>
+      <Home />
     </div>
   );
 }
