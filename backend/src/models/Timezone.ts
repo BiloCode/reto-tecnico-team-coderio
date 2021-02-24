@@ -1,4 +1,7 @@
-import { model, Schema } from "mongoose";
+import { Document, model, Schema } from "mongoose";
+import { ITimezone } from "../interfaces/ITimezone";
+
+export interface ITimezoneModel extends ITimezone, Document {}
 
 const TimezoneModel = new Schema({
   name : {
@@ -6,11 +9,7 @@ const TimezoneModel = new Schema({
     required : true,
     unique : true
   },
-  description : String,
-  time : {
-    type : Date,
-    required : true
-  }
+  description : String
 });
 
-export default model("timezone", TimezoneModel);
+export default model<ITimezoneModel>("timezone", TimezoneModel);
