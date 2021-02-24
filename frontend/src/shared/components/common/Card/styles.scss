@@ -51,7 +51,7 @@
     font-family: var(--basic-font);
     color: var(--card-title-color);
     font-weight: 900;
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 
   &__description {
@@ -72,5 +72,9 @@
 
   &:hover &__delete-icon {
     display: flex;
+  }
+
+  @media screen and (max-width: 640px) {
+    &__delete-icon { display: flex; }
   }
 }

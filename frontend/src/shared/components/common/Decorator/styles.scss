@@ -1,0 +1,11 @@
+.global-decorator {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transform: translateY(50%) translateX(50%);
+  background-color: var(--elemental-card-color);
+}

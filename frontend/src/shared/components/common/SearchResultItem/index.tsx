@@ -1,14 +1,22 @@
-import { memo } from 'react';
+import { FC, memo } from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import "./styles.scss";
 
-const SearchResultItem = () => (
-  <li className="search-result-item">
+type TProps = {
+  locationTitle : string;
+  onClick?() : void;
+}
+
+const SearchResultItem : FC<TProps> = ({ onClick , locationTitle }) => (
+  <li className="search-result-item" onClick={onClick}>
     <span className="search-result-item__icon">
       <FaMapMarkerAlt />
     </span>
     <span className="search-result-item__text">
-      Peru / Lima
+      {locationTitle} 
+    </span>
+    <span className="search-result-item__text-indicator">
+      Agregar
     </span>
   </li>
 );

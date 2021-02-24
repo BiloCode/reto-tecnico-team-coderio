@@ -34,12 +34,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     font-size: 1.3em;
     transition: .2s;
     color: var(--elemental-card-color);
 
-    &:hover { 
+    &.active:hover {
+      cursor: pointer;
       color: #fff;
       border-color: var(--elemental-card-color);
       background-color: var(--elemental-card-color);

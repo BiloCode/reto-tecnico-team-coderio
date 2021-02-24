@@ -1,28 +1,39 @@
 .search-result-item {
   height: 60px;
+  user-select: none;
   box-sizing: border-box;
   padding: 0 1.5em;
   display: grid;
-  grid-template-columns: 32px 1fr;
+  grid-template-columns: 32px 1fr 48px;
   align-items: center;
   border-bottom: 1px solid rgb(230,230,230);
   cursor: pointer;
 
   &__icon,
-  &__text {
-    color: var(--elemental-card-color);
-  }
+  &__text { color: var(--elemental-card-color); }
+
+  &__text,
+  &__text-indicator { font-family: var(--basic-font); }
 
   &__icon {
     line-height: 0;
+    font-size: 1.2em;
   }
 
-  &__text {
-    font-family: var(--basic-font);
-    font-weight: 500;
+  &__text { font-weight: 500; }
+
+  &__text-indicator {
+    display: none;
+    font-weight: 300;
+    font-size: .8em;
   }
 
+  &:hover &__text-indicator{ display: block; }
   &:hover {
     background-color: rgb(245,245,245);
+  }
+
+  &:active {
+    background-color: rgb(240,240,240);
   }
 }
