@@ -1,22 +1,21 @@
 import { FC, memo } from "react";
 import "./styles.scss";
 
-import TimezoneResultType from "types/TimezoneResultType";
 import SearchResultItem from "shared/components/common/SearchResultItem";
 
 type TProps = {
-  resultList : TimezoneResultType[];
+  resultList : string[];
   resultOnClick() : void;
 }
 
 const SearchResults : FC<TProps> = ({ resultList , resultOnClick }) => (
   <ul className="search-result-list">
     {
-      resultList.map((v) => (
+      resultList.map((v, i) => (
         <SearchResultItem
-          key={v.id}
+          key={i}
           onClick={resultOnClick}
-          locationTitle={v.title}
+          locationTitle={v}
         />
       ))
     }

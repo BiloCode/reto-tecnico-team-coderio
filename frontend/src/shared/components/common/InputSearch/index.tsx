@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { ChangeEvent, forwardRef } from 'react';
 import classnames from 'classnames';
 import "./styles.scss";
 
@@ -8,7 +8,7 @@ import { FaTimes } from 'react-icons/fa';
 type TProps = {
   isFocusedInput? : boolean;
   onClickIcon?() : void;
-  onChange?() : void;
+  onChange?(ev : ChangeEvent<HTMLInputElement>) : void;
   onFocus?() : void;
 }
 
