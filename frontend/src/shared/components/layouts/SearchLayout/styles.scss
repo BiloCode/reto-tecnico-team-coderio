@@ -1,6 +1,7 @@
 .search-layout {
   width: 100%;
-  position: relative;
+  position: sticky;
+  top: 0;
 
   &__results {
     width: 100%;

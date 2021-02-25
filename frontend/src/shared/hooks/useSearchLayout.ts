@@ -5,6 +5,7 @@ import DebounceTime from "utils/DebounceTime";
 import getSearchResults from "store/actions/getSearchResults";
 import setSearchResults from "store/actions/setSearchResults";
 import setSearchState from "store/actions/setSearchState";
+import setNewTimezone from "store/actions/setNewTimezone";
 
 const useSearchLayout = () => {
   const [ isFocusedInput , setIsFocusedInput ] = useState<boolean>(false);
@@ -18,7 +19,11 @@ const useSearchLayout = () => {
 
   // Events
   const setFocusInput = () => setIsFocusedInput(() => true);
-  const searchResultItemClick = () => { clearInput(); }
+  const searchResultItemClick = (name : string) => () => { 
+    dispatch(setNewTimezone(name));
+    clearInput();
+  }
+  
   const buttonIconClick = () => {
     clearInput();
     dispatch(setSearchResults([]));

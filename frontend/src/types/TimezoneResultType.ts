@@ -1,6 +1,8 @@
 type TimezoneResultType = {
-  id : string;
-  title : string;
+  _id : string;
+  name : string;
+  description: string;
+  date : number;
 }
 
 export default TimezoneResultType;

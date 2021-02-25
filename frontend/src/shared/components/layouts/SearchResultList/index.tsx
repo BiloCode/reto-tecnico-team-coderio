@@ -5,7 +5,7 @@ import SearchResultItem from "shared/components/common/SearchResultItem";
 
 type TProps = {
   resultList : string[];
-  resultOnClick() : void;
+  resultOnClick(name : string);
 }
 
 const SearchResults : FC<TProps> = ({ resultList , resultOnClick }) => (
@@ -14,7 +14,7 @@ const SearchResults : FC<TProps> = ({ resultList , resultOnClick }) => (
       resultList.map((v, i) => (
         <SearchResultItem
           key={i}
-          onClick={resultOnClick}
+          onClick={resultOnClick(v)}
           locationTitle={v}
         />
       ))

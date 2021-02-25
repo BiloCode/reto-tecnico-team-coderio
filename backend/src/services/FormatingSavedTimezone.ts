@@ -19,6 +19,7 @@ class FormatingSavedTimezone {
       timezonesFormated.push({
         _id : timezone._id,
         name : timezone.name,
+        description : timezone.description,
         date : data.unixtime
       });
     }

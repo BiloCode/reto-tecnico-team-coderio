@@ -51,7 +51,10 @@ const SearchLayout = () => {
             state === "loading" ?
               <Spinner /> :
               state === "complete" && list.length ?
-                <SearchResultList resultList={list} resultOnClick={search.searchResultItemClick} /> :
+                <SearchResultList
+                  resultList={list} 
+                  resultOnClick={search.searchResultItemClick}
+                /> :
                 <SearchResultEmpty />
         }
       </div>

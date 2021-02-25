@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import "./styles.scss";
 
 type TProps = {
@@ -15,4 +15,4 @@ const TextIcon : FC<TProps> = ({ icon , text }) => (
   </span>
 );
 
-export default TextIcon;
+export default memo(TextIcon);

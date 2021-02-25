@@ -5,7 +5,10 @@ const initialState : ReduxStoreType = {
     list : [],
     state : "init"
   },
-  pageTimezones : []
+  timezonesSaved : {
+    list : [],
+    state : "loading"
+  }
 }
 
 export default initialState;
