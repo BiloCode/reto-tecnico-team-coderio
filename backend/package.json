@@ -2,11 +2,12 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "./build/index.js",
+  "main": "./build",
   "scripts": {
     "test": "jest",
     "start": "node .",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "build" : "tsc"
   },
   "keywords": [],
   "author": "",
