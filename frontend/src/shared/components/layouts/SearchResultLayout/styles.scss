@@ -1,0 +1,31 @@
+.search-result-init {
+  display: grid;
+  justify-items: center;
+  row-gap: .5em;
+
+  &__icon {
+    font-size: 3em;
+    color: var(--blue-color-medium);
+  }
+
+  &__text {
+    font-family: var(--basic-font);
+    display: grid;
+    row-gap: 5px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--black-color);
+  }
+
+  &__subtitle {
+    font-size: .9em;
+    color: var(--black-color-medium);
+    font-weight: 300;
+  }
+
+}

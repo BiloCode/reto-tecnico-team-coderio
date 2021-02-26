@@ -1,32 +1,33 @@
 import { useEffect } from 'react';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { ReduxReducerType } from 'types/ReduxReducerType';
-import { ReduxStoreType } from 'types/ReduxStoreType';
+
 import getTimezoneSaved from 'store/actions/getTimezoneSaved';
 import removeTimezone from 'store/actions/removeTimezone';
 
+import useRemoveThis from './useRemoveThis';
+
+//Redux
+import { useDispatch } from 'react-redux';
+import { useReducer } from 'store/reducer';
+
 const useHome = () => {
   const dispatch = useDispatch();
-  const { 
-    timezonesSaved : {
-      list,
-      state
-    }
-  } = useSelector<ReduxReducerType, ReduxStoreType>(state => state, shallowEqual);
+  const modalConfirm = useRemoveThis();
+
+  const { timezonesSaved : { list, state } } = useReducer();
 
   useEffect(() => {
     dispatch(getTimezoneSaved());
   },[]);
 
-  const removeCard = (id : string) => () => {
-    const confirm = window.confirm("¿Estas seguro de querer eliminar esta card?");
+  const removeCard = (id : string) => async () => {
+    const confirm = await modalConfirm();
     if(confirm){
       dispatch(removeTimezone(id));  
     }
   }
 
   return {
-    list,
+    list : [...list].reverse(),
     state,
     removeCard
   }

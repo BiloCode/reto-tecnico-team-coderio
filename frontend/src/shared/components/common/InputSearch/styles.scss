@@ -1,6 +1,6 @@
 .input-search {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   display: grid;
   height: var(--search-input-height);
   grid-template-columns: 1fr 64px;
@@ -24,7 +24,12 @@
     font-size: 1.05em;
     border-radius: $radius 0 0 $radius;
     border-left: $border-style;
-    color: var(--card-title-color);
+    color: var(--black-color);
+
+    &::placeholder {
+      color: var(--black-color-light-max);
+      font-weight: 300;
+    }
   }
 
   &__button {
@@ -36,13 +41,13 @@
     align-items: center;
     font-size: 1.3em;
     transition: .2s;
-    color: var(--elemental-card-color);
+    color: var(--blue-color-medium);
 
     &.active:hover {
       cursor: pointer;
       color: #fff;
-      border-color: var(--elemental-card-color);
-      background-color: var(--elemental-card-color);
+      border-color: var(--blue-color-medium);
+      background-color: var(--blue-color-medium);
     }
   }
 }

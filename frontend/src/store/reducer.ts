@@ -1,8 +1,11 @@
 import { produce } from 'immer';
 import { ACTIONS } from "store/actions";
-import { ReduxStoreType } from "types/ReduxStoreType";
 
 import initialState from './initialState';
+
+import { shallowEqual, useSelector } from 'react-redux';
+import { ReduxReducerType } from 'types/ReduxReducerType';
+import { ReduxStoreType } from "types/ReduxStoreType";
 
 const reducer = (state = initialState, action) : ReduxStoreType => produce(state, self => {
   switch(action.type){
@@ -35,3 +38,7 @@ const reducer = (state = initialState, action) : ReduxStoreType => produce(state
 });
 
 export default reducer;
+
+export const useReducer = () => (
+  useSelector<ReduxReducerType, ReduxStoreType>(state => state, shallowEqual)
+);

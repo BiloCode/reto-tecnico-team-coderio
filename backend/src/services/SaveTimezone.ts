@@ -14,8 +14,7 @@ class SaveTimezone {
       const document = await model.save();
 
       return document;
-    } catch (error) {
-      console.log(error);
+    } catch (error) { 
       return null;
     }
   }

@@ -1,17 +1,17 @@
 .timezone-card {
   width: 100%;
   background-color: #fff;
-  border-top: 5px solid var(--elemental-card-color);
+  border-left: 6px solid var(--blue-color-medium);
   box-sizing: border-box;
   padding: 1.5em;
+  border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0,0,0,.1);
   user-select: none;
   transition: .3s;
+  position: relative;
 
   &__information {
-    display: grid;
-    height: 32px;
-    grid-template-columns: var(--width-icons-container) 1fr 32px;
+    display: flex;
     align-items: center;
   }
 
@@ -21,59 +21,54 @@
   }
 
   &__icon {
+    flex: none;
+    width: var(--width-icons-container);
     font-size: 1.3em;
-    color: var(--elemental-card-color);
-  }
-
-  &__delete-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    justify-self: end;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    color: var(--card-title-color);
-
-    &:hover {
-      color: var(--elemental-card-color);
-      background-color: rgb(240,240,240);
-    }
-
-    &:active {
-      transform: scale(.95);
-    }
+    color: var(--blue-color-medium);
   }
 
   &__title {
+    width: 220px;
+    margin: 0;
     font-family: var(--basic-font);
-    color: var(--card-title-color);
+    color: var(--black-color);
     font-weight: 900;
-    font-size: 1.3em;
-  }
+    font-size: 1.2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+    @media screen and (max-width: 740px) {
+      overflow: initial;
+      text-overflow: initial;
+    }
 
-  &__description {
-    font-family: var(--basic-font);
-    font-weight: 300;
-    font-size: .9em;
-    margin: 1.5em 0;
-    color: var(--card-description-color);
+    @media screen and (max-width: 480px) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media screen and (max-width: 360px) {
+      width: 180px;
+    }
   }
 
   &__time-indicators {
     display: flex;
   }
 
+  &__delete-icon {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 1.2em;
+    line-height: 0;
+    cursor: pointer;
+    color: var(--blue-color-medium);
+  }
+
   &:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,.1);
-  }
-
-  &:hover &__delete-icon {
-    display: flex;
-  }
-
-  @media screen and (max-width: 640px) {
-    &__delete-icon { display: flex; }
   }
 }

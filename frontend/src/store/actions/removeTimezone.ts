@@ -1,7 +1,7 @@
 import { Api } from "config/axios_config";
 import { ACTIONS } from ".";
 
-const removeTimezone = (id : string) => async dispatch =>{
+const removeTimezone = (id : string) => async dispatch => {
   try {
     const request = await Api.delete("/client/timezones/" + id);
     const { isRemove } = request.data;

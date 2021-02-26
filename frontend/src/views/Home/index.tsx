@@ -1,42 +1,40 @@
-import classnames from 'classnames';
 import "./styles.scss";
 
-import Card from "shared/components/common/Card";
+import { AiOutlineTeam } from 'react-icons/ai';
+
 import SearchLayout from "shared/components/layouts/SearchLayout";
-import Spinner from 'shared/components/common/Spinner';
 import Decorator from 'shared/components/common/Decorator';
+import TimezoneLoadingSkeleton from 'shared/components/layouts/TimezoneLoadingSkeleton';
+import TimezoneList from 'shared/components/layouts/TimezoneList';
 
 import useHome from 'shared/hooks/useHome';
 
 const Home = () => {
   const { list, state , removeCard } = useHome();
-  const grid_card_class = classnames(
-    "home-view__grid-card-content",
-    { loading : state === "loading" }
-  );
 
   return <div className="home-view">
     <div className="home-view__container">
-      <div className="home-view__input-search-container">
+      <header className="home-view__header">
+        <span className="home-view__global-title-icon"><AiOutlineTeam /></span>
+        <h1 className="home-view__global-title">Reto Tecnico Team Coderio</h1>
+      </header>
+      <nav className="home-view__navigation">
         <SearchLayout />
-      </div>
-      <div className={grid_card_class}>
+      </nav>
+      <aside className="home-view__aside">
+        <p className="home-view__title">Zonas horarias registradas ({list.length})</p>
+        <p className="home-view__subtitle">Aqui apareceran las zonas horarias que has registrado previamente.</p>
+      </aside>
+      <section className="home-view__section-card-content">
         {
           state === "loading" ?
-            <Spinner /> :
-            <>
-              {
-                list.map(v => (
-                  <Card
-                    key={v._id}
-                    cardData={v}
-                    onClickIconDelete={removeCard(v._id)}
-                  />
-                ))
-              }
-            </>
+            <TimezoneLoadingSkeleton /> :
+            <TimezoneList
+              list={list} 
+              removeCard={removeCard}
+            />
         }
-      </div>
+      </section>
     </div>
     <Decorator />
   </div>

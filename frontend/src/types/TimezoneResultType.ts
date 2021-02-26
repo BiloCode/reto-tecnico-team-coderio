@@ -2,7 +2,7 @@ type TimezoneResultType = {
   _id : string;
   name : string;
   description: string;
-  date : number;
+  date : string;
 }
 
 export default TimezoneResultType;

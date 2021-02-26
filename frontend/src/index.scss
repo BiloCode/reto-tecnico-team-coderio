@@ -3,11 +3,12 @@
 :root {
   --basic-font: 'Roboto', sans-serif;
 
-  --elemental-card-color: #208df9;
+  --blue-color-medium: #208df9;
 
-  --card-title-color: #26262d;
-  --card-footer-elements-color: #93989a;
-  --card-description-color: #62666a;
+  --black-color: #26262d;
+  --black-color-light: #93989a;
+  --black-color-light-max: #b8c2c5;
+  --black-color-medium: #62666a;
 
   --width-icons-container: 30px;
   --search-input-height: 40px;
@@ -19,15 +20,24 @@ body {
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
-    width: 8px;
-    background-color: rgb(230,230,230);
-
-    @media screen and (max-width: 640px) {
-      display: none;
-    }
+    display: none;
   }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--elemental-card-color);
-  }
+  // &::-webkit-scrollbar {
+  //   width: 8px;
+  //   background-color: rgb(230,230,230);
+
+  //   @media screen and (max-width: 640px) {
+  //     display: none;
+  //   }
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: var(--blue-color-medium);
+  // }
+}
+
+// Custom Alert
+.swal2-container {
+  font-family: var(--basic-font);
 }

@@ -1,14 +1,21 @@
 import { FC, memo } from 'react';
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import classnames from 'classnames';
 import "./styles.scss";
+
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { AiOutlineCheck , AiOutlinePlus } from 'react-icons/ai';
 
 type TProps = {
   locationTitle : string;
+  isSaved? : boolean;
   onClick?() : void;
 }
 
-const SearchResultItem : FC<TProps> = ({ onClick , locationTitle }) => (
-  <li className="search-result-item" onClick={onClick}>
+const SearchResultItem : FC<TProps> = ({ onClick , locationTitle , isSaved }) => (
+  <li
+    className={classnames("search-result-item", { saved : isSaved })} 
+    onClick={!isSaved ? onClick : undefined}
+  >
     <span className="search-result-item__icon">
       <FaMapMarkerAlt />
     </span>
@@ -16,7 +23,7 @@ const SearchResultItem : FC<TProps> = ({ onClick , locationTitle }) => (
       {locationTitle} 
     </span>
     <span className="search-result-item__text-indicator">
-      Agregar
+      { isSaved ? <AiOutlineCheck /> : <AiOutlinePlus /> }
     </span>
   </li>
 );

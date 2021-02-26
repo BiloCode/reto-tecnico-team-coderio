@@ -6,6 +6,7 @@ import { BiSearch } from 'react-icons/bi';
 import { FaTimes } from 'react-icons/fa';
 
 type TProps = {
+  placeholder? : string;
   isFocusedInput? : boolean;
   onClickIcon?() : void;
   onChange?(ev : ChangeEvent<HTMLInputElement>) : void;
@@ -13,7 +14,7 @@ type TProps = {
 }
 
 const InputSearch = forwardRef<HTMLInputElement, TProps>(
-  ({ onFocus , isFocusedInput, onClickIcon , onChange }, ref) => {
+  ({ onFocus , isFocusedInput, onClickIcon , onChange , placeholder }, ref) => {
     const input_search_button = classnames(
       "input-search__button",
       { active : isFocusedInput }
@@ -26,6 +27,7 @@ const InputSearch = forwardRef<HTMLInputElement, TProps>(
         type="text"
         onChange={onChange}
         onFocus={onFocus}
+        placeholder={placeholder}
         className="input-search__input"
       />
       <button onClick={onClickIcon} className={input_search_button}>

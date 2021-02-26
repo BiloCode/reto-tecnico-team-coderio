@@ -1,0 +1,25 @@
+
+.editable-text {
+
+  &__text , &__text--input {
+    width: 100%;
+    font-family: var(--basic-font);
+    font-weight: 300;
+    font-size: .9em;
+    margin: 1.5em 0;
+    color: var(--black-color-medium);
+    cursor: text;
+  }
+
+  &__text--input {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    resize: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
