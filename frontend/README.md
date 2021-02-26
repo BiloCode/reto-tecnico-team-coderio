@@ -2,7 +2,9 @@
 
 Aplicación web que permite agregar, actualizar, eliminar y ver zonas horarias de todo el mundo.
 
-![](/public/preview.png?raw=true)
+<p align="center">
+    <img src="./public/preview.png" width="350px"/>
+</p>
 
 > Preview del proyecto
 
