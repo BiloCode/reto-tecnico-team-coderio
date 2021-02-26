@@ -20,6 +20,8 @@
   }
 
   &__input {
+    width: 100%;
+    box-sizing: border-box;
     padding: 0 1.5em;
     font-size: 1.05em;
     border-radius: $radius 0 0 $radius;
