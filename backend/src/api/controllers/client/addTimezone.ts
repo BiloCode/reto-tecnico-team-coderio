@@ -19,5 +19,6 @@ export default async (req : Request, res : Response) => {
     response = Array.isArray(formatTimezone) ? formatTimezone[0] : null;
   }
 
-  res.status(202).json({ saved : response });
+  const statusCode = !response ? 200 : 201;
+  res.status(statusCode).json({ saved : response });
 }

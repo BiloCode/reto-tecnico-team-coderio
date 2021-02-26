@@ -41,6 +41,17 @@ Por ultimo debera de ejecutar el siguiente comando para arrancar la api:
 $ yarn run dev
 ````
 
+## Ejecutando las pruebas ⚙️
+
+Para poder ejecutar las pruebas escriba el siguiente comando en consola:
+
+````ssh
+$ yarn test
+````
+
+> Esto le permitira visualizar el estado de las pruebas realizadas a los diferentes endpoints
+
+
 ## Construido con 🛠️
 
 * [Express](https://expressjs.com/es/) - El framework web usado

@@ -10,5 +10,6 @@ export default async (req : Request, res : Response) => {
   const updateDescription = new UpdateTimezoneDescription(Timezone);
   const isUpdate = await updateDescription.__invoke(id, description);
 
-  res.status(202).json({ isUpdate });
+  const statusCode = !isUpdate ? 200 : 201;
+  res.status(statusCode).json({ isUpdate });
 }

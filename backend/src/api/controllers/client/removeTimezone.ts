@@ -9,5 +9,5 @@ export default async (req : Request, res : Response) => {
   const removeTimezone = new RemoveTimezoneSaved(Timezone);
   const isRemove = await removeTimezone.__invoke(id);
 
-  res.status(202).json({ isRemove });
+  res.status(200).json({ isRemove });
 }
