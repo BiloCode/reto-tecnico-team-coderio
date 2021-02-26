@@ -2,7 +2,7 @@
 
 Aplicación web que permite agregar, actualizar, eliminar y ver zonas horarias de todo el mundo.
 
-![](https://github.com/BiloCode/reto-tecnico-team-coderio/tree/master/frontend/public/preview.png)
+![](/public/preview.png)
 
 > Preview del proyecto
 
