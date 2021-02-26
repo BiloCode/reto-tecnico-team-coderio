@@ -19,7 +19,7 @@ import { useReducer } from 'store/reducer';
 
 const SearchLayout = () => {
   const search = useSearchLayout();
-  const { searchResults : { list, state } } = useReducer();
+  const { searchResults : { list, state } , timezonesSaved } = useReducer();
 
   const dark_screen_class = classnames("search-layout__dark-screen", 
     { hide : !search.isFocusedInput }
@@ -61,6 +61,7 @@ const SearchLayout = () => {
     <div className="search-layout">
       <InputSearch
         ref={search.inputRef}
+        disabled={timezonesSaved.state === "loading"}
         placeholder="Busca aqui..."
         onChange={search.onTextChange}
         isFocusedInput={search.isFocusedInput}

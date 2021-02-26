@@ -9,20 +9,25 @@ class FormatingSavedTimezone {
   }
 
   public __invoke = async (timezones : ITimezoneModel[]) => {
-    let timezonesFormated = [];
+    let timezonesFormated : any = [];
+    let timezonesPromises = [];
 
     for(let timezone of timezones) {
-      const data = await this.getTimezoneByName.__invoke(timezone.name);
-      if(!data)
-        continue;
+      const data = this.getTimezoneByName.__invoke(timezone.name);
+      timezonesPromises.push(data);
+    }
+
+    const data = await Promise.all(timezonesPromises);
+    data.forEach((v,i) => {
+      if(!v) return;
 
       timezonesFormated.push({
-        _id : timezone._id,
-        name : timezone.name,
-        description : timezone.description,
-        date : data.datetime
+        _id : timezones[i]._id,
+        name : timezones[i].name,
+        description : timezones[i].description,
+        date : v.datetime
       });
-    }
+    })
 
     return timezonesFormated;
   }

@@ -1,6 +1,6 @@
 import Skeleton from 'react-loading-skeleton';
 
-const skeletonQuantity = new Array(9).fill("");
+const skeletonQuantity = new Array(6).fill("");
 
 const TimezoneLoadingSkeleton = () => (
   <>

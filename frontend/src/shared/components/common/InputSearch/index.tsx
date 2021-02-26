@@ -8,13 +8,14 @@ import { FaTimes } from 'react-icons/fa';
 type TProps = {
   placeholder? : string;
   isFocusedInput? : boolean;
+  disabled?: boolean;
   onClickIcon?() : void;
   onChange?(ev : ChangeEvent<HTMLInputElement>) : void;
   onFocus?() : void;
 }
 
 const InputSearch = forwardRef<HTMLInputElement, TProps>(
-  ({ onFocus , isFocusedInput, onClickIcon , onChange , placeholder }, ref) => {
+  ({ onFocus , isFocusedInput, onClickIcon , onChange , placeholder , disabled }, ref) => {
     const input_search_button = classnames(
       "input-search__button",
       { active : isFocusedInput }
@@ -25,6 +26,7 @@ const InputSearch = forwardRef<HTMLInputElement, TProps>(
         required
         ref={ref}
         type="text"
+        disabled={disabled}
         onChange={onChange}
         onFocus={onFocus}
         placeholder={placeholder}
@@ -36,5 +38,9 @@ const InputSearch = forwardRef<HTMLInputElement, TProps>(
     </div>
   }
 );
+
+InputSearch.defaultProps = {
+  disabled : true
+}
 
 export default InputSearch;

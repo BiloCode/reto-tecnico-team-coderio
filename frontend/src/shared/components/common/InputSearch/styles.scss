@@ -30,6 +30,12 @@
       color: var(--black-color-light-max);
       font-weight: 300;
     }
+
+    &:disabled,
+    &:disabled + button {
+      background-color: rgb(240,240,240);
+      color: rgb(200,200,200);
+    }
   }
 
   &__button {

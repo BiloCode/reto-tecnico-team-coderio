@@ -58,13 +58,14 @@
   }
 
   &__section-card-content {
+    width: 100%;
     margin-bottom: 3em;
     display: grid;
     grid-template-columns: repeat(3, minmax(320px, 1fr));
     align-items: flex-start;
     gap: 1em;
 
-    @media screen and (max-width: 1040px) {
+    @media screen and (max-width: 1140px) {
       grid-template-columns: repeat(2, minmax(320px, 1fr));
     }
 
@@ -86,12 +87,25 @@
   @media screen and (max-width: 640px) {
     &__header{ 
       font-size: .8em; 
+      justify-content: center;
       align-items: center;
+      padding: 2em 0;
     }
+
+    &__navigation { margin: 1.5em 0 2em 0; }
 
     &__aside {
       font-size: .9em;
       text-align: center;
     }
+  }
+
+  @media screen and (max-width: 480px) {
+    &__header{ 
+      font-size: .7em;
+      flex-direction: column;
+    }
+
+    &__aside { font-size: .85em; }
   }
 }

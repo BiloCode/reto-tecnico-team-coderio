@@ -12,6 +12,8 @@ import useHome from 'shared/hooks/useHome';
 const Home = () => {
   const { list, state , removeCard } = useHome();
 
+  let timezonesLength = state !== "loading" ? `(${list.length})` : "(...)";
+
   return <div className="home-view">
     <div className="home-view__container">
       <header className="home-view__header">
@@ -22,7 +24,7 @@ const Home = () => {
         <SearchLayout />
       </nav>
       <aside className="home-view__aside">
-        <p className="home-view__title">Zonas horarias registradas ({list.length})</p>
+        <p className="home-view__title">Zonas horarias registradas {timezonesLength}</p>
         <p className="home-view__subtitle">Aqui apareceran las zonas horarias que has registrado previamente.</p>
       </aside>
       <section className="home-view__section-card-content">

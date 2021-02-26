@@ -14,7 +14,6 @@
     border-radius: 10px;
     transition: .3s;
     box-sizing: border-box;
-    padding-bottom: 1em;
 
     &.hide {
       transition: none;
@@ -24,7 +23,7 @@
     }
 
     &.center {
-      height: 220px;
+      height: 240px;
       display: flex;
       justify-content: center;
       align-items: center;

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import "./styles.scss";
 
 type TProps = {
@@ -19,4 +19,4 @@ const SearchResultLayout : FC<TProps> = ({ icon , title, subtitle }) => (
   </div>
 );
 
-export default SearchResultLayout;
+export default memo(SearchResultLayout);

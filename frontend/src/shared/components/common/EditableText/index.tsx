@@ -8,7 +8,7 @@ type TProps = {
 
 const EditableText : FC<TProps> = ({ defaultText , onEditFinish }) => {
   const [ disabled , setDisabled ] = useState<boolean>(true);
-  const [ text , setText ] = useState<string>(defaultText || "Sin descripcion disponible");
+  const [ text , setText ] = useState<string>(defaultText || "Sin descripción disponible");
 
   const editFinish = () => {
     onEditFinish(text);

@@ -27,6 +27,8 @@ const Card : FC<TProps> = ({ cardData, onClickIconDelete }) => {
   const current_time = Intl.DateTimeFormat("es-ES", Intlconfig).format(unixDate);
 
   const onEditText = (text : string) => {
+    if(!text) return;
+
     const updateDescription = new UpdateTimezoneDescription();
     const isUpdate = updateDescription.__invoke(cardData._id, text);
     if(!isUpdate){
