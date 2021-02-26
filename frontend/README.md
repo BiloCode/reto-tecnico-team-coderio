@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# Timezone - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación web que permite agregar, actualizar, eliminar y ver zonas horarias de todo el mundo.
 
-## Available Scripts
+![](https://github.com/BiloCode/reto-tecnico-team-coderio/tree/master/frontend/public/preview.png)
 
-In the project directory, you can run:
+> Preview del proyecto
 
-### `yarn start`
+## Comenzando 🚀
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clonar el repositorio desde https://github.com/BiloCode/reto-tecnico-team-coderio o ejecuntado el comando clone desde la terminal:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+````ssh
+$ git clone https://github.com/BiloCode/reto-tecnico-team-coderio
+````
 
-### `yarn test`
+### Pre-requisitos 📋
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [Node JS](https://nodejs.org/en/) - Entorno de desarrollo
+* [Yarn](https://yarnpkg.com) - Manejador de dependencias
 
-### `yarn build`
+### Instalación 🔧
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tras haber clonado el proyecto del repositorio, debera de situarse en la carpeta raiz del proyecto (frontend).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Una vez dentro debera de ejecutar el siguiente comando:
+```ssh
+$ yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Luego modificar el archivo de configuracion de axios en la siguiente ruta:
 
-### `yarn eject`
+````
+/src/config/axios_config.ts 
+````
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Dentro del archivo modificar la url base de la API:
+````javascript
+import axios from 'axios';
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+export const Api = axios.create({
+  baseURL : "http://localhost:4000" //API URL
+});
+````
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> La baseURL debe coincidir con la URL de tu [Api](https://github.com/BiloCode/reto-tecnico-team-coderio/tree/master/backend).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Por ultimo para ejecutar el proyecto debera ejecutar el siguiente comando en consola
+````ssh
+$ yarn start
+````
 
-## Learn More
+> Nota : La API se debera de estar ejecutando de lo contrario la aplicación no funcionara correctamente
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Despliegue 📦
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para correr la aplicacion en un entorno de produccion debera de primero generar el bundle de la aplicacion de React.
+
+Debera de ejecutar el siguiente comando en la terminal
+
+````ssh
+$ yarn build
+````
+
+## Construido con 🛠️
+
+* [React](https://es.reactjs.org) - El framework web usado
+* [Axios](https://github.com/axios/axios) - Manejador de peticiones
+* [Typescript](https://www.typescriptlang.org) - Lenguaje de programación usado
+* [Redux](https://es.redux.js.org) - Manejador de Estado
+* [React Icons](https://react-icons.github.io/react-icons/) - Proveedor de Iconos
+
+#
+
+---
+⌨️ con ❤️ por [BiloCode](https://github.com/BiloCode) 😊 

@@ -7,10 +7,11 @@ if(configuration.error) {
 
 const env = {
   port : process.env.PORT || 4000,
-  mongo_dbname : process.env.MONGO_DBNAME!,
-  mongo_server : process.env.MONGO_SERVER!,
-  mongo_user : process.env.MONGO_USER!,
-  mongo_pass : process.env.MONGO_PASS!
+  production : process.env.PRODUCTION,
+  mongo_dbname : process.env.MONGO_DBNAME,
+  mongo_server : process.env.MONGO_SERVER,
+  mongo_user : process.env.MONGO_USER,
+  mongo_pass : process.env.MONGO_PASS
 }
 
 export default env;
