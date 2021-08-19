@@ -1,0 +1,24 @@
+{
+  "name": "timezone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Este proyecto fue un reto tecnico puesto por el equipo Coderio.\r Consiste en realizar una aplicación que permita visualizar la zona horaria a través del uso de una API publica proporcionada por ellos mismos.",
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "build" : "yarn build --workspace=@timezone/frontend && yarn build --workspace=@timezone/frontend",
+    "start" : "yarn start --workspace=@timezone/backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BiloCode/reto-tecnico-team-coderio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BiloCode/reto-tecnico-team-coderio/issues"
+  },
+  "homepage": "https://github.com/BiloCode/reto-tecnico-team-coderio#readme"
+}
